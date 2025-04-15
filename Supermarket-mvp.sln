@@ -5,17 +5,6 @@ VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supermarket-mvp", "Supermarket-mvp.csproj", "{6E86B233-538A-4F45-AA34-73C2E1FA6F8C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{9EEDCF6F-AE54-45EF-8282-E3520E14543F}"
-	ProjectSection(SolutionItems) = preProject
-		Form1.cs = Form1.cs
-		Form1.Designer.cs = Form1.Designer.cs
-		Form1.resx = Form1.resx
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenter", "Presenter", "{C5502011-F437-465C-B220-44345D6FBD06}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
