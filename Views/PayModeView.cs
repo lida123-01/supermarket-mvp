@@ -14,7 +14,7 @@ namespace Supermarket_mvp.Views
     public partial class PayModeView : Form, IPayModeView
     {
         private bool isEdit;
-        private bool isSeccessful;
+        private bool isSuccessful;
         private string message;
 
         //constructor
@@ -114,8 +114,8 @@ namespace Supermarket_mvp.Views
         }
         public bool IsSeccessful
         {
-            get { return isSeccessful; }
-            set { isSeccessful = value; }
+            get { return isSuccessful; }
+            set { isSuccessful = value; }
         }
         
         public string Message
