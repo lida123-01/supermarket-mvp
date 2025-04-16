@@ -68,7 +68,7 @@ namespace Supermarket_mvp.Presenters
 
         private void SearchPayMode(object? sender, EventArgs e)
         {
-            bool emptyValue == string.IsNullOrWhiteSpace(this.view.SearchValue);
+            bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
             if (emptyValue == false)
             {
                 payModeList = repository.GetByValue(this.view.SearchValue);

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.Views
 {
-    
+
     public partial class PayModeView : Form, IPayModeView
     {
         private bool isEdit;
@@ -21,6 +21,9 @@ namespace Supermarket_mvp.Views
         public PayModeView()
         {
             InitializeComponent();
+            AssociateAnRaiseViewEvents();
+
+            tabControl.TabPages.Remove(tabPagePayModeDetail.PayModeDetail);
         }
         //eventos
         public event EventHandler SearchEvent;
@@ -117,7 +120,7 @@ namespace Supermarket_mvp.Views
             get { return isSuccessful; }
             set { isSuccessful = value; }
         }
-        
+
         public string Message
         {
             get { return message; }
@@ -138,13 +141,29 @@ namespace Supermarket_mvp.Views
                 }
             };
         }
-        public PayModeView()
-        {
-            InitializeComponent();
-            AssociateAnRaiseViewEvents();
 
-            tabControl.TabPages.Remove(tabPagePayModeDetail.PayModeDetail);
+        private void SetPayModeListBildingSource(BindingSource payModeList)
+        {
+            DgPayMode.DataSource = payModeList;
+        }
+        private static PayModeView instance;
+
+        public static PayModeView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new PayModeView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
         }
     }
-    
+
 }
