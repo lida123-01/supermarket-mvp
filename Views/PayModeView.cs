@@ -10,31 +10,12 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.Views
 {
+    
     public partial class PayModeView : Form, IPayModeView
     {
-        private bool IsEdit;
-        private bool IsSuccessful;
+        private bool isEdit;
+        private bool isSeccessful;
         private string message;
-        // Identificador del modo de pago
-        public string PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        // Nombre del modo de pago
-        public string PayModeName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        // Observaciones del modo de pago
-        public string PayModeObservation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        // Valor a buscar (texto de búsqueda)
-        public string SearchaValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        // Indica si se está editando un registro
-        public bool IsEdit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        // Indica si la operación fue exitosa
-        public bool IsSuccessful { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        // Mensaje a mostrar (ej. errores, confirmaciones)x
-        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         //constructor
         public PayModeView()
@@ -122,19 +103,19 @@ namespace Supermarket_mvp.Views
         }
         public string SearchValue
         {
-            get { return txtSearch.Text; }
-            set { txtSearch.Text = value; }
+            get { return TxtSearch.Text; }
+            set { TxtSearch.Text = value; }
 
         }
         public bool IsEdit
         {
-            get { return IsEdit; }
-            set { IsEdit = value; }
+            get { return isEdit; }
+            set { isEdit = value; }
         }
         public bool IsSeccessful
         {
-            get { return IsSeccessful; }
-            set { IsSeccessful = value; }
+            get { return isSeccessful; }
+            set { isSeccessful = value; }
         }
         
         public string Message
@@ -142,17 +123,14 @@ namespace Supermarket_mvp.Views
             get { return message; }
             set { message = value; }
         }
-        public PayModeView()
-        {
-            InitializeComponent();
-            AssociateAnRaiseViewEvents();
 
-        }
+        public string SearchaValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool IsSuccessful { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         private void AssociateAnRaiseViewEvents()
         {
             BtnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
-            txtSearch.KeyDown += (s, e) =>
+            TxtSearch.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter)
                 {
@@ -165,7 +143,7 @@ namespace Supermarket_mvp.Views
             InitializeComponent();
             AssociateAnRaiseViewEvents();
 
-            tabControl1.TabPages.Remove(tabPagePayModeDetail);
+            tabControl.TabPages.Remove(tabPagePayModeDetail.PayModeDetail);
         }
     }
     
